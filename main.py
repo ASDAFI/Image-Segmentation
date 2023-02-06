@@ -1,9 +1,10 @@
 import view
+import sys
 
-some_pic = "images/3.jpg"
+pic_path = sys.argv[1]
 def main(path: str):
     window = view.Window(path)
     window.show()
 
 if __name__ == "__main__":
-    main(some_pic)
+    main(pic_path)
