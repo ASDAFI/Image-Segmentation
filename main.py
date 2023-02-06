@@ -1,14 +1,9 @@
-import graph
-import cv2
+import view
 
-def test():
-    img = cv2.imread("images/5.jpg")
-    img = graph.cut(img, (70, 70), (0, 0))
-    cv2.imshow("cut", img)
-
-    cv2.waitKey(0)
-
-    cv2.destroyAllWindows()
+some_pic = "images/3.jpg"
+def main(path: str):
+    window = view.Window(path)
+    window.show()
 
 if __name__ == "__main__":
-    test()
+    main(some_pic)
