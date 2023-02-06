@@ -1,7 +1,11 @@
 # Image-Segmentation
 
 ## Image segmentation tool
-This tool helps you to extract foreground from background in images.
+This tool helps you to extract foreground and background from images.
+
+![input](https://github.com/ASDAFI/Image-Segmentation/blob/master/assets/input.jpg)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+![output](https://github.com/ASDAFI/Image-Segmentation/blob/master/assets/output.jpg)
+
 
 
 
@@ -17,7 +21,7 @@ pip install -r requirements.txt
 ### Execution
 Run program for your photo by following comand. (use your photo instead of `images/2.jpg` !)
 ```bash
-python main.py -photo images/2.jpg
+python main.py images/2.jpg
 ```
 ### Select foreground
 you can select foreground by left click on the photo and after that, selected point will be shown by a green circle.
