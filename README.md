@@ -1,7 +1,11 @@
 # Image-Segmentation
 
 ## Image segmentation tool
-This tool helps you to extract foreground from background in images.
+This tool helps you to extract foreground and background from images.
+
+![alt text](https://github.com/ASDAFI/Image-Segmentation/blob/master/assets/input.jpg)  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+![alt text](https://github.com/ASDAFI/Image-Segmentation/blob/master/assets/output.jpg)
+
 
 
 
