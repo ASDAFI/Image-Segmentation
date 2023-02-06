@@ -1,11 +1,13 @@
 import math
 import cv2
 import numpy as np
-
 import graph
+
+
 
 def distance(a, b):
     return math.sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)
+
 
 class Window:
     def __init__(self, path: str):
@@ -64,6 +66,7 @@ class Window:
     def cut(self):
         self.is_after_cut = True
 
+        # reshape selected pixels from 300x300 to 30x30
         reshaped_background_pixels = []
         for i in range(len(self.background_pixels)):
             pixel = self.background_pixels[i]
@@ -74,9 +77,12 @@ class Window:
             pixel = self.foreground_pixels[i]
             reshaped_foreground_pixels.append((pixel[0] // 10, pixel[1] // 10,))
 
+
         net = graph.Image(self.network_photo)
         net.do_cut(reshaped_foreground_pixels, reshaped_background_pixels)
         background = net.get_background()
+
+        # make background black
         self.cutted_image = self.network_photo.copy()
         for (x, y) in background:
             self.cutted_image[x][y] = np.array([0, 0, 0])
@@ -111,5 +117,7 @@ class Window:
                 if k == ord('r'):
                     self.is_after_cut = False
 
+                elif k == ord('s'):
+                    cv2.imwrite("output.jpg", self.cutted_image)
 
 
